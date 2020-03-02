@@ -1,11 +1,12 @@
 # read for more settings https://hub.docker.com/_/php
-FROM php:7.4.1-fpm-alpine3.11
+FROM php:7.4.2-fpm-alpine3.11
 
 RUN apk update && apk upgrade \
     && apk add --update composer\
        git \
-       shadow\
+       shadow \
        libssh-dev \
+       openssh-client \
        rabbitmq-c-dev \
     && apk add --update --no-cache --virtual .build-deps \
        autoconf \
@@ -28,7 +29,7 @@ RUN apk update && apk upgrade \
 
 COPY ./config/www.pool.conf $PHP_INI_DIR/conf.d/    
 COPY ./config/php-fpm.conf $PHP_INI_DIR/conf.d/
-# COPY ./config/xdebug.ini $PHP_INI_DIR/conf.d/
+#COPY ./config/xdebug.ini $PHP_INI_DIR/conf.d/
 COPY ./config/php.ini $PHP_INI_DIR/php.ini
 
 WORKDIR /var/www

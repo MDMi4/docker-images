@@ -8,7 +8,6 @@ fastcgi_connect_timeout           600s;
 fastcgi_index  index.php;
 fastcgi_param  SCRIPT_FILENAME    $realpath_root$fastcgi_script_name;
 fastcgi_param  DOCUMENT_ROOT      $realpath_root;
-# fastcgi_param  SCRIPT_FILENAME    $document_root$fastcgi_script_name;
 fastcgi_param  SCRIPT_NAME        $fastcgi_script_name;
 fastcgi_param  PHP_VALUE          "error_log=/var/log/nginx/application_php_errors.log";
 
