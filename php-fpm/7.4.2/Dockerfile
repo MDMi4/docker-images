@@ -17,9 +17,7 @@ RUN apk update && apk upgrade \
        make \
        alpine-sdk \
        python \
-    && docker-php-ext-install -j$(nproc) bcmath \
-    && docker-php-ext-install -j$(nproc) pdo_mysql \
-    && docker-php-ext-install -j$(nproc) mysqli \
+    && docker-php-ext-install -j$(nproc) bcmath pdo_mysql mysqli \
     && pecl install amqp \
     && pecl install redis \
     && pecl install xdebug \
