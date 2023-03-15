@@ -7,5 +7,5 @@ Building images and pushing it to registry
 * Tag an image `docker tag IMAGE_ID {path_to_your_registry}/php-cli:7.4.2`
 * Push image to the registry `docker push {path_to_your_registry}/php-cli:7.4.2`
 
-\* `{path_to_your_registry}` it can be your account name in dockerHub, or path to your own docker registry.
+\* `{path_to_your_registry}` it can be your account name on dockerHub, or path to personal docker registry.
 
